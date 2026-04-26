@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\residentusercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\residentusercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\addresidentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\addresidentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "database.cs",
+              "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\database.cs",
+              "RelativeDocumentMoniker": "BrgyMis2\\database.cs",
+              "ToolTip": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\database.cs",
+              "RelativeToolTip": "BrgyMis2\\database.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T10:57:17.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "residentUserControl.cs [Design]",
+              "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\residentUserControl.cs",
+              "RelativeDocumentMoniker": "BrgyMis2\\residentUserControl.cs",
+              "ToolTip": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\residentUserControl.cs [Design]",
+              "RelativeToolTip": "BrgyMis2\\residentUserControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T10:57:14.428Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "addResidentForm.cs [Design]",
+              "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\addResidentForm.cs",
+              "RelativeDocumentMoniker": "BrgyMis2\\addResidentForm.cs",
+              "ToolTip": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\addResidentForm.cs [Design]",
+              "RelativeToolTip": "BrgyMis2\\addResidentForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T10:56:45.492Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
