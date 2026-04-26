@@ -46,7 +46,7 @@ namespace BrgyMis2
                 fc.SetSelectedValue(natdrp, inforesult["nationality"]);
                 fc.SetSelectedValue(isvoterdrp, inforesult["isVoter"]);
                 contxt.Text = (inforesult["contact"].Length >= 10) ? inforesult["contact"].Substring(3, 10) : "";
-                
+                emailtxt.Text = inforesult["email"];
 
                 string[] address = {
                                           "houseNumber","block","lot","streetName","areaType","area"
@@ -102,10 +102,33 @@ namespace BrgyMis2
 
         private void savedata()
         {
+            // Email validation
+            string email = emailtxt.Text.Trim();
+            if (string.IsNullOrEmpty(email) || !email.Contains("@") || !email.Contains("."))
+            {
+                MessageBox.Show(
+                    "Please enter a valid Email Address!",
+                    "Invalid Email",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
             string residentId = fc.generateId(7);
+
+            // Auto-generate username — firstname.lastname (lowercase)
+            string autoUsername = (fnametxt.Text.Trim() + "." + lnametxt.Text.Trim())
+                                  .ToLower()
+                                  .Replace(" ", "");
+
+            // Auto-generate password — MMddyyyy
+            string autoPassword = dobdrp.Value.ToString("MMddyyyy");
+
             Dictionary<string, dynamic> fields = new Dictionary<string, dynamic>(){
-                {"residentId",residentId},
+                {"residentId", residentId},
                 {"fname", fnametxt.Text},
+                {"mname", mnametxt.Text},
                 {"lname", lnametxt.Text},
                 {"ext", exttxt.Text},
                 {"placeOfBirth", pobtxt.Text},
@@ -115,84 +138,63 @@ namespace BrgyMis2
                 {"isVoter", isvoterdrp.selectedValue},
                 {"civilStatus", csdrp.selectedValue},
                 {"nationality", natdrp.selectedValue},
-                {"contact", (contxt.Text.Length == 10) ? "+63" + contxt.Text : ""}
+                {"contact", (contxt.Text.Length == 10) ? "+63" + contxt.Text : ""},
+                {"username", autoUsername},
+                {"password", autoPassword},
+                {"email", email},  // ← email address
+                {"status", "Active"}
             };
 
             if (db.insertRecord("tbl_residentinfo", fields))
             {
-
                 Dictionary<string, dynamic> address = new Dictionary<string, dynamic>(){
-                         {"residentId", residentId},
-                         {"houseNumber", housenotxt.Text},
-                         {"block", blktxt.Text},
-                         {"lot", lottxt.Text},
-                         {"streetName", streettxt.Text},
-                         {"areaType", areatypedrp.selectedValue},
-                         {"area", areadrp.selectedValue},
-                     };
+                    {"residentId", residentId},
+                    {"houseNumber", housenotxt.Text},
+                    {"block", blktxt.Text},
+                    {"lot", lottxt.Text},
+                    {"streetName", streettxt.Text},
+                    {"areaType", areatypedrp.selectedValue},
+                    {"area", areadrp.selectedValue},
+                };
                 db.insertRecord("tbl_address", address);
 
-                Dictionary<string, dynamic> father = new Dictionary<string, dynamic>()
-                    {
-                        {"residentId", residentId},
-                        {"fname", ffnametxt.Text},
-                        {"mname", fmnametxt.Text},
-                        {"lname", flnametxt.Text},
-                        {"ext", fexttxt.Text},
-                        {"isDeceased", fdecdrp.selectedValue},
-                        {"relationship", "Father"},
-                    };
-                db.insertRecord("tbl_familybackground", father);
+                // Show credentials to admin
+                MessageBox.Show(
+                    "Resident saved successfully!\n\n" +
+                    "Login Credentials:\n" +
+                    "Username: " + autoUsername + "\n" +
+                    "Password: " + autoPassword + "\n\n" +
+                    "Please inform the resident of their credentials.",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
 
-                Dictionary<string, dynamic> mother = new Dictionary<string, dynamic>()
-                    {
-                        {"residentId", residentId},
-                        {"fname", ffnametxt.Text},
-                        {"mname", fmnametxt.Text},
-                        {"lname", flnametxt.Text},
-                        {"ext", fexttxt.Text},
-                        {"isDeceased", fdecdrp.selectedValue},
-                        {"relationship", "Mother"},
-                    };
-                db.insertRecord("tbl_familybackground", mother);
-
-                Dictionary<string, object> guardian = new Dictionary<string, object>()
-                    {
-                        {"residentId", residentId},
-                        {"fname", ffnametxt.Text},
-                        {"mname", fmnametxt.Text},
-                        {"lname", flnametxt.Text},
-                        {"ext", fexttxt.Text},
-                        {"isDeceased", fdecdrp.selectedValue},
-                        {"relationship", "Guardian"},
-                    };
-                db.insertRecord("tbl_familybackground", guardian);
-                Dictionary<string, object> spouse = new Dictionary<string, object>()
-                    {
-                        {"residentId", residentId},
-                        {"fname", ffnametxt.Text},
-                        {"mname", fmnametxt.Text},
-                        {"lname", flnametxt.Text},
-                        {"ext", fexttxt.Text},
-                        {"isDeceased", fdecdrp.selectedValue},
-                        {"relationship", "Spouse"},
-                    };
-                db.insertRecord("tbl_familybackground", spouse);
-
-                MessageBox.Show("save");
                 residentUserControl.Instance.loaddata();
+                this.Close();
             }
             else
             {
-                MessageBox.Show("error");
-
+                MessageBox.Show("Error saving resident!");
             }
         }
 
 
         private void updatedata()
         {
-           // fc.SetSelectedValue(areadrp, area);
+            // Email validation
+            string email = emailtxt.Text.Trim();
+            if (string.IsNullOrEmpty(email) || !email.Contains("@") || !email.Contains("."))
+            {
+                MessageBox.Show(
+                    "Please enter a valid Email Address!",
+                    "Invalid Email",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+            // fc.SetSelectedValue(areadrp, area);
 
             Dictionary<string, dynamic> info = new Dictionary<string, dynamic>()
             {
@@ -267,6 +269,19 @@ namespace BrgyMis2
 
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void metroTabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

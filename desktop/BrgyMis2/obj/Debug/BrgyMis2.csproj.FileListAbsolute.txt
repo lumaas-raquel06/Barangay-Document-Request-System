@@ -27,3 +27,28 @@ C:\Users\adrian\Documents\Visual Studio 2013\Projects\BrgyMis2\BrgyMis2\obj\Debu
 C:\Users\adrian\Documents\Visual Studio 2013\Projects\BrgyMis2\BrgyMis2\obj\Debug\BrgyMis2.applicationUserControl.resources
 C:\Users\adrian\Documents\Visual Studio 2013\Projects\BrgyMis2\BrgyMis2\obj\Debug\BrgyMis2.officialsUserControl.resources
 C:\Users\adrian\Documents\Visual Studio 2013\Projects\BrgyMis2\BrgyMis2\obj\Debug\BrgyMis2.paymentForm.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\bin\Debug\BrgyMis2.exe.config
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\bin\Debug\BrgyMis2.exe
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\bin\Debug\BrgyMis2.pdb
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\bin\Debug\aa\BrgyMis2.resources.dll
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.csproj.AssemblyReference.cache
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.addEventForm.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.addProgramForm.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.addResidentForm.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.applicationUserControl.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.confirmationBox.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.dashboardUserControl.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.eventUserControl.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.Form1.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.officialsUserControl.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.paymentForm.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.programUserControl.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.Properties.Resources.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.residentUserControl.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.Form1.aa.resources
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.csproj.GenerateResource.cache
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.csproj.CoreCompileInputs.cache
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\aa\BrgyMis2.resources.dll
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.csproj.Up2Date
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.exe
+C:\IT312_System_Integration_System\BarangaySystem\Barangay-Document-Request-System\desktop\BrgyMis2\obj\Debug\BrgyMis2.pdb

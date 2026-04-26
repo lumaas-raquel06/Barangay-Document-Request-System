@@ -3,16 +3,56 @@
   "WorkspaceRootPath": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\brgymis2\\addresidentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\addresidentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\residentusercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\addresidentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\addresidentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\brgymis2\\residentusercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\residentusercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\addresidentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\addresidentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\picturecircle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\picturecircle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\residentusercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\residentusercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\officialsusercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\officialsusercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\paymentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\paymentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\programusercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\programusercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|c:\\it312_system_integration_system\\barangaysystem\\barangay-document-request-system\\desktop\\brgymis2\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E6D0D8-4B7E-4880-9905-5D59BC609CD8}|BrgyMis2\\BrgyMis2.csproj|solutionrelative:brgymis2\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,24 +62,136 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "residentUserControl.cs",
+              "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\residentUserControl.cs",
+              "RelativeDocumentMoniker": "BrgyMis2\\residentUserControl.cs",
+              "ToolTip": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\residentUserControl.cs",
+              "RelativeToolTip": "BrgyMis2\\residentUserControl.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAvwCcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T13:53:11.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\Form1.cs",
+              "RelativeDocumentMoniker": "BrgyMis2\\Form1.cs",
+              "ToolTip": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\Form1.cs",
+              "RelativeToolTip": "BrgyMis2\\Form1.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAvwFcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T13:53:00.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "function.cs",
+              "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\function.cs",
+              "RelativeDocumentMoniker": "BrgyMis2\\function.cs",
+              "ToolTip": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\function.cs",
+              "RelativeToolTip": "BrgyMis2\\function.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T13:52:52.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "officialsUserControl.cs [Design]",
+              "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\officialsUserControl.cs",
+              "RelativeDocumentMoniker": "BrgyMis2\\officialsUserControl.cs",
+              "ToolTip": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\officialsUserControl.cs [Design]",
+              "RelativeToolTip": "BrgyMis2\\officialsUserControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T13:52:50.599Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PictureCircle.cs [Design]",
+              "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\PictureCircle.cs",
+              "RelativeDocumentMoniker": "BrgyMis2\\PictureCircle.cs",
+              "ToolTip": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\PictureCircle.cs [Design]",
+              "RelativeToolTip": "BrgyMis2\\PictureCircle.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T13:52:44.754Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "paymentForm.cs [Design]",
+              "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\paymentForm.cs",
+              "RelativeDocumentMoniker": "BrgyMis2\\paymentForm.cs",
+              "ToolTip": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\paymentForm.cs [Design]",
+              "RelativeToolTip": "BrgyMis2\\paymentForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T13:52:42.979Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\Program.cs",
+              "RelativeDocumentMoniker": "BrgyMis2\\Program.cs",
+              "ToolTip": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\Program.cs",
+              "RelativeToolTip": "BrgyMis2\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T13:33:55.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "programUserControl.cs [Design]",
+              "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\programUserControl.cs",
+              "RelativeDocumentMoniker": "BrgyMis2\\programUserControl.cs",
+              "ToolTip": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\programUserControl.cs [Design]",
+              "RelativeToolTip": "BrgyMis2\\programUserControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T13:52:40.678Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\Form1.cs",
+              "RelativeDocumentMoniker": "BrgyMis2\\Form1.cs",
+              "ToolTip": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\Form1.cs [Design]",
+              "RelativeToolTip": "BrgyMis2\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T13:31:15.808Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "database.cs",
               "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\database.cs",
               "RelativeDocumentMoniker": "BrgyMis2\\database.cs",
               "ToolTip": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\database.cs",
               "RelativeToolTip": "BrgyMis2\\database.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwDoAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-26T10:57:17.546Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "residentUserControl.cs [Design]",
               "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\residentUserControl.cs",
               "RelativeDocumentMoniker": "BrgyMis2\\residentUserControl.cs",
@@ -51,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "addResidentForm.cs [Design]",
               "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\addResidentForm.cs",
               "RelativeDocumentMoniker": "BrgyMis2\\addResidentForm.cs",
@@ -60,6 +212,19 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-26T10:56:45.492Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "addResidentForm.cs",
+              "DocumentMoniker": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\addResidentForm.cs",
+              "RelativeDocumentMoniker": "BrgyMis2\\addResidentForm.cs",
+              "ToolTip": "C:\\IT312_System_Integration_System\\BarangaySystem\\Barangay-Document-Request-System\\desktop\\BrgyMis2\\addResidentForm.cs",
+              "RelativeToolTip": "BrgyMis2\\addResidentForm.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAlwDAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T13:31:32.527Z",
+              "EditorCaption": ""
             }
           ]
         }
