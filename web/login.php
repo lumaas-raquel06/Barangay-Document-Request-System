@@ -13,23 +13,30 @@
       <div class="signin-signup">
 
         <!-- SIGN IN FORM ONLY -->
-        <form action="signup.php" class="sign-in-form" method="POST">
-          <div class="backhome">
-            <ul>
-              <li><a href="index.php">Back to Home</a></li>
-            </ul>
-          </div>
-          <h2 class="title">Sign in</h2>
-          <div class="input-field"> 
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" name="Username" required>
-          </div>
-          <div class="input-field"> 
-            <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" name="Password" required>
-          </div>
-          <input type="submit" value="Login" class="btn solid">
-        </form> 
+      <form action="login_process.php" class="sign-in-form" method="POST">
+        <div class="backhome">
+          <ul>
+            <li><a href="index.php">Back to Home</a></li>
+          </ul>
+        </div>
+        <h2 class="title">Sign in</h2>
+        
+        <div class="input-field"> 
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Username" name="Username" required>
+        </div>
+        
+        <div class="input-field"> 
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Password" name="Password" required>
+        </div>
+        
+        <input type="submit" value="Login" class="btn solid">
+        
+        <a href="forgotpassword.php" style="color: #5995fd; text-decoration: none; font-size: 14px; margin-top: 10px; display: block; text-align: center;">
+            Forgot Password?
+        </a>
+      </form> 
 
       </div>
     </div>
