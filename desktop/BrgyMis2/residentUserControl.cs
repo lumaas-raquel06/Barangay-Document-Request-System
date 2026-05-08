@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Http;
 
 namespace BrgyMis2
 {
@@ -48,23 +49,84 @@ namespace BrgyMis2
         }
 
 
-        public void loaddata()
+        public async void loaddata()
         {
-            string[] fields = new string[]
+            try
             {
-                "residentId as ID", "fname as Firstname","mname as Middlename", "lname as Lastname", "placeOfBirth as Birthplace", "age as Age", "gender as Gender", "bday as Birthdate", "isVoter as Voter", "civilStatus as CivilStatus", "nationality as Nationality", "contact as Contact"
-            };
-            mytable.DataSource = db.tableLoad("tbl_residentinfo", fields);
+                using (var client = new HttpClient())
+                {
+                    string apiUrl = "http://localhost/Barangay-Documents-Online-Request-System/api/residents.php";
+                    var response = await client.GetAsync(apiUrl);
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Simple JSON parsing
+                    // Kuhaon ang "data" array
+                    int dataStart = responseBody.IndexOf("\"data\":[") + 8;
+                    int dataEnd = responseBody.LastIndexOf("]");
+                    string dataArray = responseBody.Substring(dataStart, dataEnd - dataStart);
+
+                    // Load sa DataTable
+                    DataTable dt = new DataTable();
+                    dt.Columns.Add("ID");
+                    dt.Columns.Add("Firstname");
+                    dt.Columns.Add("Middlename");
+                    dt.Columns.Add("Lastname");
+                    dt.Columns.Add("Gender");
+                    dt.Columns.Add("Birthdate");
+                    dt.Columns.Add("Age");
+                    dt.Columns.Add("Contact");
+                    dt.Columns.Add("Email");
+                    dt.Columns.Add("Status");
+
+                    // I-parse ang JSON objects
+                    string[] residents = dataArray.Split(new string[] { "},{" }, StringSplitOptions.None);
+                    foreach (string resident in residents)
+                    {
+                        string r = resident.Replace("{", "").Replace("}", "");
+                        DataRow row = dt.NewRow();
+                        row["ID"] = getJsonValue(r, "residentId");
+                        row["Firstname"] = getJsonValue(r, "fname");
+                        row["Middlename"] = getJsonValue(r, "mname");
+                        row["Lastname"] = getJsonValue(r, "lname");
+                        row["Gender"] = getJsonValue(r, "gender");
+                        row["Birthdate"] = getJsonValue(r, "bday");
+                        row["Age"] = getJsonValue(r, "age");
+                        row["Contact"] = getJsonValue(r, "contact");
+                        row["Email"] = getJsonValue(r, "email");
+                        row["Status"] = getJsonValue(r, "status");
+                        dt.Rows.Add(row);
+                    }
+
+                    mytable.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading residents: " + ex.Message);
+            }
         }
 
-        private void residentUserControl_Load(object sender, EventArgs e)
+        // Helper method para mag-extract og value gikan sa JSON string
+        private string getJsonValue(string json, string key)
+        {
+            try
+            {
+                string search = "\"" + key + "\":\"";
+                int start = json.IndexOf(search) + search.Length;
+                int end = json.IndexOf("\"", start);
+                return json.Substring(start, end - start);
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
+        private async void residentUserControl_Load(object sender, EventArgs e)
         {
             try
             {
                 loaddata();
-                fc.columnsToListbox(filterdrp, mytable);
-                
-            
             }
             catch (Exception ex)
             {

@@ -1,0 +1,15 @@
+# --- Visual Studio / C# Junk ---
+.vs/
+[Bb]in/
+[Oo]bj/
+*.suo
+*.user
+*.pdb
+
+# --- Web / XAMPP Junk ---
+.DS_Store
+Thumbs.db
+
+# --- Temporary Files ---
+*.tmp
+*.log

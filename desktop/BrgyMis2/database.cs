@@ -55,47 +55,65 @@ namespace BrgyMis2
             }
         }
 
-       
+        public int GetLastResidentNumber(string yearPrefix)
+        {
+            int lastNumber = 0;
+            try
+            {
+                connection();
+                string q = "SELECT MAX(residentId) as maxId FROM tbl_residentinfo WHERE residentId LIKE @prefix";
+                command = new MySqlCommand(q, mysqlconn);
+                command.Parameters.AddWithValue("@prefix", yearPrefix + "-%");
+
+                var reader = command.ExecuteReader();
+                if (reader.Read() && reader["maxId"] != DBNull.Value)
+                {
+                    string maxId = reader["maxId"].ToString(); // e.g. "2026-0005"
+                    string[] parts = maxId.Split('-');
+                    if (parts.Length == 2)
+                    {
+                        int.TryParse(parts[1], out lastNumber); // convert "0005" to 5
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error fetching last resident number: " + ex.Message);
+            }
+            finally
+            {
+                mysqlconn.Close();
+            }
+            return lastNumber;
+        }
+
+
         public bool insertRecord(string table, Dictionary<string, dynamic> keys)
         {
             try
             {
                 connection();
-                string q = string.Empty;
-                q += "INSERT INTO " + table;
-                q += " (" + string.Join(",", keys.Keys) + ") VALUES ";
-                q += "('" + string.Join("','", keys.Values) + "')";
+                List<string> columns = new List<string>();
+                List<string> values = new List<string>();
 
-                MySqlDataReader reader;
+                foreach (var kv in keys)
+                {
+                    columns.Add(kv.Key);
+                    if (kv.Value == null)
+                        values.Add("NULL");
+                    else
+                        values.Add("'" + kv.Value.ToString() + "'");
+                }
+
+                string q = $"INSERT INTO {table} ({string.Join(",", columns)}) VALUES ({string.Join(",", values)})";
+
                 command = new MySqlCommand(q, mysqlconn);
-                reader = command.ExecuteReader();
+                command.ExecuteNonQuery(); // FIXED: use ExecuteNonQuery
                 return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
-                return false;
-            }
-            finally
-            {
-                mysqlconn.Close();
-            }
-
-        }
-
-        private bool insertRecordx(string q)
-        {
-            try
-            {
-                connection();
-                MySqlDataReader reader;
-                command = new MySqlCommand(q, mysqlconn);
-                reader = command.ExecuteReader();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Insert Error: " + ex.Message);
                 return false;
             }
             finally
@@ -103,6 +121,8 @@ namespace BrgyMis2
                 mysqlconn.Close();
             }
         }
+
+
 
         public bool insertProgram(string name, string category, string description, byte[] img)
         {
@@ -289,6 +309,66 @@ namespace BrgyMis2
                 mysqlconn.Close();
             }
         }
+        public bool saveOrUpdateRecord(string table, Dictionary<string, dynamic> keys, string residentId)
+        {
+            try
+            {
+                connection();
+
+                // Check if resident already exists
+                string checkQuery = "SELECT COUNT(*) FROM " + table + " WHERE residentId=@residentId";
+                command = new MySqlCommand(checkQuery, mysqlconn);
+                command.Parameters.AddWithValue("@residentId", residentId);
+
+                int count = Convert.ToInt32(command.ExecuteScalar());
+
+                if (count > 0)
+                {
+                    // UPDATE existing record
+                    List<string> updates = new List<string>();
+                    foreach (var kv in keys)
+                    {
+                        if (kv.Value == null)
+                            updates.Add(kv.Key + "=NULL");
+                        else
+                            updates.Add(kv.Key + "='" + kv.Value + "'");
+                    }
+                    string q = $"UPDATE {table} SET {string.Join(",", updates)} WHERE residentId=@residentId";
+                    command = new MySqlCommand(q, mysqlconn);
+                    command.Parameters.AddWithValue("@residentId", residentId);
+                    command.ExecuteNonQuery(); // FIXED
+                }
+                else
+                {
+                    // INSERT new record
+                    List<string> columns = new List<string>();
+                    List<string> values = new List<string>();
+                    foreach (var kv in keys)
+                    {
+                        columns.Add(kv.Key);
+                        if (kv.Value == null)
+                            values.Add("NULL");
+                        else
+                            values.Add("'" + kv.Value.ToString() + "'");
+                    }
+                    string q = $"INSERT INTO {table} ({string.Join(",", columns)}) VALUES ({string.Join(",", values)})";
+                    command = new MySqlCommand(q, mysqlconn);
+                    command.ExecuteNonQuery(); // FIXED
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Save/Update Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                mysqlconn.Close();
+            }
+        }
+
 
         public string countrecord(string table, string condition, string value)
         {

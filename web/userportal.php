@@ -309,7 +309,7 @@ label #sidebar_btn:hover {
   <div class="sidebar">
   	<div class="profile_info">
   		<img src="img/ava.png" class="profile_image" alt="">
-      <?php  echo $login_session = $row['Username']; ?>
+      <?php echo $row['fname'] . ' ' . $row['lname']; ?>
   	</div>
   		<a href="userportal.php"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
   	    <a href="userreq_doc.php"><i class="fas fa-file-alt"></i><span>Request Document</span></a>

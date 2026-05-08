@@ -197,7 +197,7 @@ function fetchRequests($conn, $resId, $status) {
 										<?php if($db_status == 'Pending for Approval'): ?>
 											<a href="cancelreq.php?id=<?php echo $row['id']; ?>" 
 											style="color: #f94144;" 
-											onclick="return confirm('Sigurado ka i-cancel kini?');">
+											onclick="return confirm('Are you sure you want to cancel this request?');">
 												<i class="fas fa-times-circle"></i> Cancel
 											</a>
 										<?php endif; ?>
