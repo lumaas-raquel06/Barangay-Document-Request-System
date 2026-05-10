@@ -255,6 +255,21 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="reportbtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="reportbtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>640, 0</value>
+  </data>
+  <data name="reportbtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="reportbtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 98</value>
+  </data>
+  <data name="reportbtn.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <data name="&gt;&gt;reportbtn.Name" xml:space="preserve">
     <value>reportbtn</value>
   </data>
@@ -266,6 +281,21 @@
   </data>
   <data name="&gt;&gt;reportbtn.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="bunifuTileButton2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="bunifuTileButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>320, 0</value>
+  </data>
+  <data name="bunifuTileButton2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="bunifuTileButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 98</value>
+  </data>
+  <data name="bunifuTileButton2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;bunifuTileButton2.Name" xml:space="preserve">
     <value>bunifuTileButton2</value>
@@ -279,17 +309,47 @@
   <data name="&gt;&gt;bunifuTileButton2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;programbtn.Name" xml:space="preserve">
-    <value>programbtn</value>
+  <data name="requestbtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;programbtn.Type" xml:space="preserve">
+  <data name="requestbtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 0</value>
+  </data>
+  <data name="requestbtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="requestbtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 98</value>
+  </data>
+  <data name="requestbtn.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;requestbtn.Name" xml:space="preserve">
+    <value>requestbtn</value>
+  </data>
+  <data name="&gt;&gt;requestbtn.Type" xml:space="preserve">
     <value>Bunifu.Framework.UI.BunifuTileButton, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;programbtn.Parent" xml:space="preserve">
+  <data name="&gt;&gt;requestbtn.Parent" xml:space="preserve">
     <value>menupanel</value>
   </data>
-  <data name="&gt;&gt;programbtn.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;requestbtn.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="r.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="r.Location" type="System.Drawing.Point, System.Drawing">
+    <value>533, 0</value>
+  </data>
+  <data name="r.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="r.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 98</value>
+  </data>
+  <data name="r.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;r.Name" xml:space="preserve">
     <value>r</value>
@@ -303,6 +363,21 @@
   <data name="&gt;&gt;r.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="p.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="p.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 0</value>
+  </data>
+  <data name="p.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="p.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 98</value>
+  </data>
+  <data name="p.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;p.Name" xml:space="preserve">
     <value>p</value>
   </data>
@@ -313,6 +388,21 @@
     <value>menupanel</value>
   </data>
   <data name="&gt;&gt;p.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="applicationbtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="applicationbtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>427, 0</value>
+  </data>
+  <data name="applicationbtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="applicationbtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 98</value>
+  </data>
+  <data name="applicationbtn.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="&gt;&gt;applicationbtn.Name" xml:space="preserve">
@@ -326,6 +416,21 @@
   </data>
   <data name="&gt;&gt;applicationbtn.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="bunifuTileButton1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="bunifuTileButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="bunifuTileButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="bunifuTileButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 98</value>
+  </data>
+  <data name="bunifuTileButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;bunifuTileButton1.Name" xml:space="preserve">
     <value>bunifuTileButton1</value>
@@ -519,246 +624,6 @@
   <data name="&gt;&gt;headerpanel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="reportbtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="reportbtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>640, 0</value>
-  </data>
-  <data name="reportbtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="reportbtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 98</value>
-  </data>
-  <data name="reportbtn.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;reportbtn.Name" xml:space="preserve">
-    <value>reportbtn</value>
-  </data>
-  <data name="&gt;&gt;reportbtn.Type" xml:space="preserve">
-    <value>Bunifu.Framework.UI.BunifuTileButton, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;reportbtn.Parent" xml:space="preserve">
-    <value>menupanel</value>
-  </data>
-  <data name="&gt;&gt;reportbtn.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="bunifuTileButton2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="bunifuTileButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 0</value>
-  </data>
-  <data name="bunifuTileButton2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="bunifuTileButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 98</value>
-  </data>
-  <data name="bunifuTileButton2.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;bunifuTileButton2.Name" xml:space="preserve">
-    <value>bunifuTileButton2</value>
-  </data>
-  <data name="&gt;&gt;bunifuTileButton2.Type" xml:space="preserve">
-    <value>Bunifu.Framework.UI.BunifuTileButton, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bunifuTileButton2.Parent" xml:space="preserve">
-    <value>menupanel</value>
-  </data>
-  <data name="&gt;&gt;bunifuTileButton2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="programbtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="programbtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 0</value>
-  </data>
-  <data name="programbtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="programbtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 98</value>
-  </data>
-  <data name="programbtn.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;programbtn.Name" xml:space="preserve">
-    <value>programbtn</value>
-  </data>
-  <data name="&gt;&gt;programbtn.Type" xml:space="preserve">
-    <value>Bunifu.Framework.UI.BunifuTileButton, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;programbtn.Parent" xml:space="preserve">
-    <value>menupanel</value>
-  </data>
-  <data name="&gt;&gt;programbtn.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="r.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="r.Location" type="System.Drawing.Point, System.Drawing">
-    <value>533, 0</value>
-  </data>
-  <data name="r.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="r.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 98</value>
-  </data>
-  <data name="r.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;r.Name" xml:space="preserve">
-    <value>r</value>
-  </data>
-  <data name="&gt;&gt;r.Type" xml:space="preserve">
-    <value>Bunifu.Framework.UI.BunifuTileButton, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;r.Parent" xml:space="preserve">
-    <value>menupanel</value>
-  </data>
-  <data name="&gt;&gt;r.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="p.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="p.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 0</value>
-  </data>
-  <data name="p.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="p.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 98</value>
-  </data>
-  <data name="p.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;p.Name" xml:space="preserve">
-    <value>p</value>
-  </data>
-  <data name="&gt;&gt;p.Type" xml:space="preserve">
-    <value>Bunifu.Framework.UI.BunifuTileButton, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;p.Parent" xml:space="preserve">
-    <value>menupanel</value>
-  </data>
-  <data name="&gt;&gt;p.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="applicationbtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="applicationbtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>427, 0</value>
-  </data>
-  <data name="applicationbtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="applicationbtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 98</value>
-  </data>
-  <data name="applicationbtn.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;applicationbtn.Name" xml:space="preserve">
-    <value>applicationbtn</value>
-  </data>
-  <data name="&gt;&gt;applicationbtn.Type" xml:space="preserve">
-    <value>Bunifu.Framework.UI.BunifuTileButton, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;applicationbtn.Parent" xml:space="preserve">
-    <value>menupanel</value>
-  </data>
-  <data name="&gt;&gt;applicationbtn.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="bunifuTileButton1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="bunifuTileButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="bunifuTileButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="bunifuTileButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 98</value>
-  </data>
-  <data name="bunifuTileButton1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;bunifuTileButton1.Name" xml:space="preserve">
-    <value>bunifuTileButton1</value>
-  </data>
-  <data name="&gt;&gt;bunifuTileButton1.Type" xml:space="preserve">
-    <value>Bunifu.Framework.UI.BunifuTileButton, Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bunifuTileButton1.Parent" xml:space="preserve">
-    <value>menupanel</value>
-  </data>
-  <data name="&gt;&gt;bunifuTileButton1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 763</value>
-  </data>
-  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1400, 37</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="label4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -825,8 +690,47 @@
   <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 763</value>
+  </data>
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1400, 37</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="mainpanel.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="dashboardUserControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 25</value>
+  </data>
+  <data name="dashboardUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="dashboardUserControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1347, 689</value>
+  </data>
+  <data name="dashboardUserControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;dashboardUserControl1.Name" xml:space="preserve">
     <value>dashboardUserControl1</value>
@@ -867,30 +771,6 @@
   <data name="&gt;&gt;mainpanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="dashboardUserControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 25</value>
-  </data>
-  <data name="dashboardUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="dashboardUserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1347, 689</value>
-  </data>
-  <data name="dashboardUserControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dashboardUserControl1.Name" xml:space="preserve">
-    <value>dashboardUserControl1</value>
-  </data>
-  <data name="&gt;&gt;dashboardUserControl1.Type" xml:space="preserve">
-    <value>BrgyMis2.dashboardUserControl, BrgyMis2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;dashboardUserControl1.Parent" xml:space="preserve">
-    <value>mainpanel</value>
-  </data>
-  <data name="&gt;&gt;dashboardUserControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -899,9 +779,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1400, 800</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>

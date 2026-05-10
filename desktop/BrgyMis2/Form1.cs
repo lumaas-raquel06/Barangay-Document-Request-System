@@ -95,12 +95,6 @@ namespace BrgyMis2
             CollapseHeader();
         }
 
-        private void programbtn_Click(object sender, EventArgs e)
-        {
-            mainpanel.Controls.Clear();
-            mainpanel.Controls.Add(programUserControl.Instance);
-            f.centerUserpanel(programUserControl.Instance);
-        }
 
         private void headerpanel_Paint(object sender, PaintEventArgs e)
         {
@@ -127,6 +121,18 @@ namespace BrgyMis2
             mainpanel.Controls.Clear();
             mainpanel.Controls.Add(officialsUserControl.Instance);
             f.centerUserpanel(officialsUserControl.Instance);
+        }
+
+        private void requestbtn_Click(object sender, EventArgs e)
+        {
+            // 1. Limpyohan ang mainpanel aron matangtang ang karaan nga UserControl
+            mainpanel.Controls.Clear();
+
+            // 2. I-add ang requestUserControl (gamit ang Instance pattern nimo)
+            mainpanel.Controls.Add(requestUserControl.Instance);
+
+            // 3. I-center ang UserControl sa mainpanel gamit ang imong function 'f'
+            f.centerUserpanel(requestUserControl.Instance);
         }
     }
 }

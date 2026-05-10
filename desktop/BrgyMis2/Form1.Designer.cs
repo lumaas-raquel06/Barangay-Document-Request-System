@@ -37,7 +37,7 @@
             this.menupanel = new System.Windows.Forms.Panel();
             this.reportbtn = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
-            this.programbtn = new Bunifu.Framework.UI.BunifuTileButton();
+            this.requestbtn = new Bunifu.Framework.UI.BunifuTileButton();
             this.r = new Bunifu.Framework.UI.BunifuTileButton();
             this.p = new Bunifu.Framework.UI.BunifuTileButton();
             this.applicationbtn = new Bunifu.Framework.UI.BunifuTileButton();
@@ -106,7 +106,7 @@
             this.menupanel.BackColor = System.Drawing.Color.Snow;
             this.menupanel.Controls.Add(this.reportbtn);
             this.menupanel.Controls.Add(this.bunifuTileButton2);
-            this.menupanel.Controls.Add(this.programbtn);
+            this.menupanel.Controls.Add(this.requestbtn);
             this.menupanel.Controls.Add(this.r);
             this.menupanel.Controls.Add(this.p);
             this.menupanel.Controls.Add(this.applicationbtn);
@@ -145,21 +145,21 @@
             this.bunifuTileButton2.Name = "bunifuTileButton2";
             this.bunifuTileButton2.Click += new System.EventHandler(this.bunifuTileButton2_Click);
             // 
-            // programbtn
+            // requestbtn
             // 
-            this.programbtn.BackColor = System.Drawing.Color.White;
-            this.programbtn.color = System.Drawing.Color.White;
-            this.programbtn.colorActive = System.Drawing.Color.Gainsboro;
-            this.programbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.programbtn, "programbtn");
-            this.programbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(68)))), ((int)(((byte)(200)))));
-            this.programbtn.Image = global::BrgyMis2.Properties.Resources.icons8_Event_32px;
-            this.programbtn.ImagePosition = 14;
-            this.programbtn.ImageZoom = 40;
-            this.programbtn.LabelPosition = 29;
-            this.programbtn.LabelText = "Programs";
-            this.programbtn.Name = "programbtn";
-            this.programbtn.Click += new System.EventHandler(this.programbtn_Click);
+            this.requestbtn.BackColor = System.Drawing.Color.White;
+            this.requestbtn.color = System.Drawing.Color.White;
+            this.requestbtn.colorActive = System.Drawing.Color.Gainsboro;
+            this.requestbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.requestbtn, "requestbtn");
+            this.requestbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(68)))), ((int)(((byte)(200)))));
+            this.requestbtn.Image = global::BrgyMis2.Properties.Resources.icons8_Event_32px;
+            this.requestbtn.ImagePosition = 14;
+            this.requestbtn.ImageZoom = 40;
+            this.requestbtn.LabelPosition = 29;
+            this.requestbtn.LabelText = "Requests";
+            this.requestbtn.Name = "requestbtn";
+            this.requestbtn.Click += new System.EventHandler(this.requestbtn_Click);
             // 
             // r
             // 
@@ -323,7 +323,7 @@
         private Bunifu.Framework.UI.BunifuTileButton reportbtn;
         private Bunifu.Framework.UI.BunifuTileButton r;
         private Bunifu.Framework.UI.BunifuTileButton applicationbtn;
-        private Bunifu.Framework.UI.BunifuTileButton programbtn;
+        private Bunifu.Framework.UI.BunifuTileButton requestbtn;
         private Bunifu.Framework.UI.BunifuTileButton p;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

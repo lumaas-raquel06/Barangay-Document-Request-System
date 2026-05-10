@@ -189,31 +189,37 @@ namespace BrgyMis2
             try
             {
                 connection();
-                MySqlDataReader reader;
-
-                string q = "select * from " + table + " where " + condition + "='" + id + "'";
+                // Naggamit og Parameters aron safe sa SQL Injection
+                string q = $"SELECT * FROM {table} WHERE {condition} = @id";
                 command = new MySqlCommand(q, mysqlconn);
-                //command.Parameters.AddWithValue("id", id);
-                reader = command.ExecuteReader();
-                while(reader.Read())
+                command.Parameters.AddWithValue("@id", id);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
                 {
-                    foreach (var f in need)
+                    if (reader.Read())
                     {
-                        result.Add(f, reader[f].ToString());
+                        foreach (var f in need)
+                        {
+                            try
+                            {
+                                // I-check kon nag-exist ba ang column sa result set
+                                int ordinal = reader.GetOrdinal(f);
+                                result.Add(f, reader.IsDBNull(ordinal) ? "" : reader[f].ToString());
+                            }
+                            catch (IndexOutOfRangeException)
+                            {
+                                // Kon wala ang column (e.g. 'area' vs 'areaType'), i-set lang og empty string
+                                result.Add(f, "");
+                            }
+                        }
                     }
-
                 }
-
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("DB Fetch Error: " + ex.Message);
             }
-            finally
-            {
-                mysqlconn.Close();
-            }
+            finally { mysqlconn.Close(); }
             return result;
         }
 
@@ -252,38 +258,27 @@ namespace BrgyMis2
         {
             try
             {
-            string q = "";
-            string condition = "";
-            foreach (var item in where)
-                condition += item.Key + "='" + item.Value + "' AND ";
-
-           
-
-            condition = condition.Substring(0, condition.Length - 5);
-
-
-            foreach (var item in fields)
-                q += item.Key + "='" + item.Value + "', ";
-
-            q = q.Substring(0, q.Length -2);
-            q = "update " + table + " SET " + q + " WHERE " + condition;
-            
                 connection();
-                MySqlDataReader reader;
-                command = new MySqlCommand(q, mysqlconn);
-                reader = command.ExecuteReader();
-                return true;
+                List<string> fieldList = new List<string>();
+                foreach (var item in fields)
+                    fieldList.Add($"{item.Key}='{item.Value}'");
 
+                List<string> whereList = new List<string>();
+                foreach (var item in where)
+                    whereList.Add($"{item.Key}='{item.Value}'");
+
+                string q = $"UPDATE {table} SET {string.Join(", ", fieldList)} WHERE {string.Join(" AND ", whereList)}";
+
+                command = new MySqlCommand(q, mysqlconn);
+                command.ExecuteNonQuery(); // Gamit ExecuteNonQuery para sa UPDATE
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Update Record Error: " + ex.Message);
                 return false;
             }
-            finally
-            {
-                mysqlconn.Close();
-            }
+            finally { mysqlconn.Close(); }
         }
 
 
