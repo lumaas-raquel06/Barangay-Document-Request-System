@@ -22,6 +22,7 @@ namespace BrgyMis2
         private static residentUserControl instance;
         database db = new database();
         function fc = new function();
+
         public static residentUserControl Instance
         {
             get
@@ -60,7 +61,7 @@ namespace BrgyMis2
             {
                 using (var client = new HttpClient())
                 {
-                    string apiUrl = "http://localhost/Barangay-Document-Request-System/web/api/residents.php?status=" + viewStatus;
+                    string apiUrl = "http://127.0.0.1:8000/api/residents?status=" + viewStatus;
                     var response = await client.GetAsync(apiUrl);
                     string responseBody = await response.Content.ReadAsStringAsync();
 
@@ -68,7 +69,13 @@ namespace BrgyMis2
                     // Kon nagsugod og '<', pasabot HTML error to gikan sa PHP
                     if (!responseBody.Trim().StartsWith("{"))
                     {
-                        MessageBox.Show("Ang API nag-return og HTML imbis nga JSON. Palihug i-check ang residents.php.\n\nServer Response: " + responseBody);
+                        MessageBox.Show(
+                            "The API returned an invalid response format. Please check the Laravel API server.\n\nServer Response: " + responseBody,
+                            "API Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+
                         return;
                     }
 
@@ -111,22 +118,6 @@ namespace BrgyMis2
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading residents: " + ex.Message);
-            }
-        }
-
-        // Helper method para mag-extract og value gikan sa JSON string
-        private string getJsonValue(string json, string key)
-        {
-            try
-            {
-                string search = "\"" + key + "\":\"";
-                int start = json.IndexOf(search) + search.Length;
-                int end = json.IndexOf("\"", start);
-                return json.Substring(start, end - start);
-            }
-            catch
-            {
-                return "";
             }
         }
 
@@ -207,8 +198,12 @@ namespace BrgyMis2
 
                 if (result == DialogResult.Yes)
                 {
-                    // 1. Update sa Database (Siguroha nga 'connect.php' ang naa sa updateStatus.php)
-                    await updateResidentStatus(resId, newStatus);
+                    bool updated = await updateResidentStatus(resId, newStatus);
+
+                    if (!updated)
+                    {
+                        return;
+                    }
 
                     // 2. Refresh ang table base sa unsay gi-filter karon
                     // Gamita ang .Text kon dili mo-gana ang .selectedValue
@@ -232,33 +227,43 @@ namespace BrgyMis2
             }
         }
 
-        private async Task updateResidentStatus(string id, string status)
+        private async Task<bool> updateResidentStatus(string id, string status)
         {
             try
             {
                 using (var client = new HttpClient())
                 {
-                    string url = "http://localhost/Barangay-Document-Request-System/web/api/updateStatus.php";
-                    var data = new { residentId = id, status = status };
-                    var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
+                    string url = $"http://127.0.0.1:8000/api/residents/{id}/status";
 
-                    var response = await client.PostAsync(url, content);
+                    var data = new { status = status };
+
+                    var content = new StringContent(
+                        JsonConvert.SerializeObject(data),
+                        Encoding.UTF8,
+                        "application/json"
+                    );
+
+                    var request = new HttpRequestMessage(new HttpMethod("PATCH"), url)
+                    {
+                        Content = content
+                    };
+
+                    var response = await client.SendAsync(request);
                     string resBody = await response.Content.ReadAsStringAsync();
 
-                    // I-check kon tinuod ba nga success
-                    if (resBody.ToLower().Contains("true"))
-                    {
-                        // Ayaw na pag MessageBox dinhi para diretso refresh
-                    }
-                    else
+                    if (!response.IsSuccessStatusCode)
                     {
                         MessageBox.Show("Server Error: " + resBody);
+                        return false;
                     }
+
+                    return true;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("C# Error: " + ex.Message);
+                return false;
             }
         }
 

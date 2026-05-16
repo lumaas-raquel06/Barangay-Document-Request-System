@@ -12,9 +12,19 @@ namespace BrgyMis2
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private string loggedFullname;
+        private string loggedRole;
+
+        public Form1(string fullname, string role)
         {
             InitializeComponent();
+
+            loggedFullname = fullname;
+            loggedRole = role;
+
+            lblWelcome.Text = "Welcome: " + loggedFullname;
+            lblRole.Text = "Role: " + loggedRole;
+
             dragctrl.TargetControl = this.headerpanel;
             elipse.ElipseRadius = 20;
             elipse.TargetControl = this;
@@ -30,7 +40,7 @@ namespace BrgyMis2
             get
             {
                 if (instance == null)
-                    instance = new Form1();
+                    instance = new Form1("Guest", "Unknown");
                 return instance;
             }
         }
@@ -133,6 +143,11 @@ namespace BrgyMis2
 
             // 3. I-center ang UserControl sa mainpanel gamit ang imong function 'f'
             f.centerUserpanel(requestUserControl.Instance);
+        }
+
+        private void reportbtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

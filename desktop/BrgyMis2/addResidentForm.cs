@@ -26,7 +26,7 @@ namespace BrgyMis2
         public string id { get; set; }
 
         //folder name sa htdocs
-        string baseApiUrl = "http://localhost/Barangay-Document-Request-System/web/api/";
+        string baseApiUrl = "http://127.0.0.1:8000/api/";
 
         public void update()
         {
@@ -159,7 +159,7 @@ namespace BrgyMis2
                 using (var client = new HttpClient())
                 {
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
-                    var response = await client.PostAsync(baseApiUrl + "residents.php", content);
+                    var response = await client.PostAsync(baseApiUrl + "residents", content);
                     string responseBody = await response.Content.ReadAsStringAsync();
 
                     if (responseBody.Contains("\"success\":true"))
@@ -200,47 +200,67 @@ namespace BrgyMis2
                     var residentData = new
                     {
                         residentId = id,
-                        fname = fnametxt.Text,
-                        mname = mnametxt.Text,
-                        lname = lnametxt.Text,
-                        ext = exttxt.Text,
-                        placeOfBirth = pobtxt.Text,
+                        fname = fnametxt.Text.Trim(),
+                        mname = mnametxt.Text.Trim(),
+                        lname = lnametxt.Text.Trim(),
+                        ext = exttxt.Text.Trim(),
+                        placeOfBirth = pobtxt.Text.Trim(),
                         gender = genderdrp.selectedValue,
                         bday = dobdrp.Value.ToString("yyyy-MM-dd"),
-                        age = agetxt.Text,
+                        age = agetxt.Text.Trim(),
                         isVoter = isvoterdrp.selectedValue,
                         civilStatus = csdrp.selectedValue,
                         nationality = natdrp.selectedValue,
-                        contact = (contxt.Text.Length == 10) ? "+63" + contxt.Text : contxt.Text,
-
-                        // I-apil ang address fields sa update
-                        houseNumber = housenotxt.Text,
-                        block = blktxt.Text,
-                        lot = lottxt.Text,
-                        streetName = streettxt.Text,
-                        areaType = areatypedrp.selectedValue
+                        contact = (contxt.Text.Length == 10) ? "+63" + contxt.Text.Trim() : contxt.Text.Trim(),
+                        houseNumber = housenotxt.Text.Trim(),
+                        block = blktxt.Text.Trim(),
+                        lot = lottxt.Text.Trim(),
+                        streetName = streettxt.Text.Trim(),
+                        areaType = areatypedrp.selectedValue,
+                        email = emailtxt.Text.Trim()
                     };
 
-                    var content = new StringContent(JsonConvert.SerializeObject(residentData), Encoding.UTF8, "application/json");
+                    var content = new StringContent(
+                        JsonConvert.SerializeObject(residentData),
+                        Encoding.UTF8,
+                        "application/json"
+                    );
 
-                    // Siguroha nga ang updateResident.php andam pud modawat ani nga address fields
-                    var response = await client.PostAsync(baseApiUrl + "updateResident.php", content);
+                    var response = await client.PutAsync(baseApiUrl + "residents/" + id, content);
                     string resBody = await response.Content.ReadAsStringAsync();
 
-                    if (resBody.Contains("\"success\":true"))
+                    if (response.IsSuccessStatusCode && resBody.Contains("\"success\":true"))
                     {
-                        // Update usab ang email sa pikas table
-                        var emailData = new { residentId = id, email = emailtxt.Text };
-                        var emailContent = new StringContent(JsonConvert.SerializeObject(emailData), Encoding.UTF8, "application/json");
-                        await client.PostAsync(baseApiUrl + "updateUserResident.php", emailContent);
+                        MessageBox.Show(
+                            "Resident information updated successfully.",
+                            "Success",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
 
-                        MessageBox.Show("Updated successfully!");
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
+                    else
+                    {
+                        MessageBox.Show(
+                            "The server was unable to update the resident.\n\nServer Response: " + resBody,
+                            "Update Failed",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                    }
                 }
             }
-            catch (Exception ex) { MessageBox.Show("Update Error: " + ex.Message); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Unable to update resident information.\n\nDetails: " + ex.Message,
+                    "Update Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
 
 
