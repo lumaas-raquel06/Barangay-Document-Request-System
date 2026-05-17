@@ -30,7 +30,22 @@ namespace BrgyMis2
         public requestUserControl()
         {
             InitializeComponent();
+            SetupDataGridViews();
         }
+
+        private void SetupDataGridViews()
+        {
+            dgvPending.AutoGenerateColumns = false;
+            dgvApproved.AutoGenerateColumns = false;
+            dgvDisapproved.AutoGenerateColumns = false;
+            dgvCompleted.AutoGenerateColumns = false;
+
+            dgvPending.AllowUserToAddRows = false;
+            dgvApproved.AllowUserToAddRows = false;
+            dgvDisapproved.AllowUserToAddRows = false;
+            dgvCompleted.AllowUserToAddRows = false;
+        }
+
         public async void loaddata(string status, DataGridView dgv, string year, string search = "")
         {
             try
@@ -39,9 +54,9 @@ namespace BrgyMis2
                 {
                     string url =
                         baseApiUrl +
-                        "requests?status=" + Uri.EscapeDataString(status) +
-                        "&year=" + Uri.EscapeDataString(year) +
-                        "&search=" + Uri.EscapeDataString(search);
+                        "requests?status=" + Uri.EscapeDataString(status.Trim()) +
+                        "&year=" + Uri.EscapeDataString(year.Trim()) +
+                        "&search=" + Uri.EscapeDataString(search.Trim());
 
                     string responseBody = await client.GetStringAsync(url);
 
@@ -140,7 +155,7 @@ namespace BrgyMis2
         private void searchtxt_OnValueChanged(object sender, EventArgs e)
         {
             string currentStatus = "";
-            DataGridView targetDgv = null;
+            DataGridView targetDgv = null;  
 
             switch (tabControl1.SelectedTab.Text)
             {

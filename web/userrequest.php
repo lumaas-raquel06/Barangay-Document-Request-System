@@ -303,6 +303,7 @@ function fetchRequests($conn, $resId, $status) {
 			document.getElementById("edit_doc").value = data.Documents;
 			document.getElementById("edit_payment").value = data.Payment;
 			document.getElementById("edit_service").value = data.Service;
+			document.getElementById("edit_date").value = data.DateofRequest;
 
 			modal.style.display = "block";
 		}
