@@ -16,6 +16,7 @@ namespace BrgyMis2
     {
         private static requestUserControl _instance;
         private readonly string baseApiUrl = "http://127.0.0.1:8000/api/";
+        private Timer refreshTimer = new Timer();
 
         public static requestUserControl Instance
         {
@@ -31,8 +32,50 @@ namespace BrgyMis2
         {
             InitializeComponent();
             SetupDataGridViews();
+
+            refreshTimer.Interval = 1000; //refresh every 5 seconds
+            refreshTimer.Tick += refreshTimer_Tick;
+            refreshTimer.Start();
         }
 
+        private void refreshTimer_Tick(object sender, EventArgs e)
+        {
+            LoadCurrentTabData();
+        }
+
+        private void LoadCurrentTabData()
+        {
+            string currentStatus = "";
+            DataGridView targetDgv = null;
+
+            switch (tabControl1.SelectedTab.Text)
+            {
+                case "Request":
+                    currentStatus = "Pending for Approval";
+                    targetDgv = dgvPending;
+                    break;
+
+                case "Approved":
+                    currentStatus = "Approved";
+                    targetDgv = dgvApproved;
+                    break;
+
+                case "Disapproved":
+                    currentStatus = "Disapproved";
+                    targetDgv = dgvDisapproved;
+                    break;
+
+                case "Completed":
+                    currentStatus = "Completed";
+                    targetDgv = dgvCompleted;
+                    break;
+            }
+
+            if (targetDgv != null)
+            {
+                loaddata(currentStatus, targetDgv, dudYear.Text, searchtxt.Text);
+            }
+        }
         private void SetupDataGridViews()
         {
             dgvPending.AutoGenerateColumns = false;
