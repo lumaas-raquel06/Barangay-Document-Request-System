@@ -36,6 +36,42 @@ namespace BrgyMis2
             refreshTimer.Interval = 1000; //refresh every 5 seconds
             refreshTimer.Tick += refreshTimer_Tick;
             refreshTimer.Start();
+
+            dgvPending.CellContentClick += RequestGrid_CellContentClick;
+            dgvApproved.CellContentClick += RequestGrid_CellContentClick;
+            dgvDisapproved.CellContentClick += RequestGrid_CellContentClick;
+            dgvCompleted.CellContentClick += RequestGrid_CellContentClick;
+        }
+
+        private void RequestGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            DataGridView dgv = sender as DataGridView;
+
+            if (dgv == null)
+                return;
+
+            // Make sure clicked column is Action/View column
+            if (dgv.Columns[e.ColumnIndex].HeaderText != "Action")
+                return;
+
+            string requestId = dgv.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string residentName = dgv.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string documentType = dgv.Rows[e.RowIndex].Cells[2].Value.ToString();
+            string purpose = dgv.Rows[e.RowIndex].Cells[3].Value.ToString();
+            string dateRequested = dgv.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+            RequestDetailsForm detailsForm = new RequestDetailsForm(
+                requestId,
+                residentName,
+                documentType,
+                purpose,
+                dateRequested
+            );
+
+            detailsForm.ShowDialog();
         }
 
         private void refreshTimer_Tick(object sender, EventArgs e)
