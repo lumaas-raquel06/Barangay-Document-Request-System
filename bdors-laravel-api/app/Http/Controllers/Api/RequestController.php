@@ -106,4 +106,28 @@ class RequestController extends Controller
             'message' => 'Request status updated successfully.'
         ]);
     }
+
+    public function show($id)
+    {
+        $request = DB::table('request')
+            ->leftJoin('user_resident', 'request.residentId', '=', 'user_resident.residentId')
+            ->select(
+                'request.*',
+                'user_resident.email'
+            )
+            ->where('request.id', $id)
+            ->first();
+
+        if (!$request) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Request not found.'
+            ], 404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => $request
+        ]);
+    }
 }

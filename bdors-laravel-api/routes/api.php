@@ -46,3 +46,4 @@ Route::get('/requests', [RequestController::class, 'index']);
 Route::post('/requests', [RequestController::class, 'store']);
 Route::patch('/requests/{id}/status', [RequestController::class, 'updateStatus']);
 Route::put('/residents/{residentId}', [ResidentController::class, 'update']);
+Route::get('/requests/{id}', [RequestController::class, 'show']);
