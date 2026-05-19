@@ -45,7 +45,7 @@ namespace BrgyMis2
 
         private void RequestGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0)
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 return;
 
             DataGridView dgv = sender as DataGridView;
@@ -53,25 +53,35 @@ namespace BrgyMis2
             if (dgv == null)
                 return;
 
-            // Make sure clicked column is Action/View column
             if (dgv.Columns[e.ColumnIndex].HeaderText != "Action")
                 return;
 
-            string requestId = dgv.Rows[e.RowIndex].Cells[0].Value.ToString();
-            string residentName = dgv.Rows[e.RowIndex].Cells[1].Value.ToString();
-            string documentType = dgv.Rows[e.RowIndex].Cells[2].Value.ToString();
-            string purpose = dgv.Rows[e.RowIndex].Cells[3].Value.ToString();
-            string dateRequested = dgv.Rows[e.RowIndex].Cells[4].Value.ToString();
+            try
+            {
+                string requestId = dgv.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-            RequestDetailsForm detailsForm = new RequestDetailsForm(
-                requestId,
-                residentName,
-                documentType,
-                purpose,
-                dateRequested
-            );
+                refreshTimer.Stop();
 
-            detailsForm.ShowDialog();
+                using (RequestDetailsForm detailsForm = new RequestDetailsForm(requestId))
+                {
+                    detailsForm.ShowDialog();
+                }
+
+                LoadCurrentTabData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Unable to open request details.\n\nDetails: " + ex.Message,
+                    "Request Details Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+            finally
+            {
+                refreshTimer.Start();
+            }
         }
 
         private void refreshTimer_Tick(object sender, EventArgs e)

@@ -150,6 +150,12 @@
       <DependentUpon>programUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestDetailsForm.Designer.cs">
+      <DependentUpon>RequestDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="requestUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -212,6 +218,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RequestDetailsForm.resx">
+      <DependentUpon>RequestDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="requestUserControl.resx">
       <DependentUpon>requestUserControl.cs</DependentUpon>
     </EmbeddedResource>
