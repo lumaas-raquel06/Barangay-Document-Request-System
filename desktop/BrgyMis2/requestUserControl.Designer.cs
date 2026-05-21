@@ -94,6 +94,7 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Request";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // searchtxt
             // 
@@ -115,6 +116,7 @@
             this.searchtxt.TabIndex = 27;
             this.searchtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.searchtxt.OnValueChanged += new System.EventHandler(this.searchtxt_OnValueChanged);
+            this.searchtxt.Load += new System.EventHandler(this.requestUserControl_Load);
             // 
             // pictureBox3
             // 
@@ -420,11 +422,15 @@
             // dudYear
             // 
             this.dudYear.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dudYear.Items.Add("2024");
+            this.dudYear.Items.Add("2025");
+            this.dudYear.Items.Add("2026");
             this.dudYear.Location = new System.Drawing.Point(722, 116);
             this.dudYear.Name = "dudYear";
             this.dudYear.Size = new System.Drawing.Size(99, 23);
             this.dudYear.TabIndex = 32;
             this.dudYear.Text = "domainUpDown1";
+            this.dudYear.SelectedItemChanged += new System.EventHandler(this.dudYear_SelectedItemChanged);
             // 
             // label1
             // 
@@ -466,6 +472,7 @@
             this.Location = new System.Drawing.Point(0, 20);
             this.Name = "requestUserControl";
             this.Size = new System.Drawing.Size(1347, 738);
+            this.Load += new System.EventHandler(this.requestUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

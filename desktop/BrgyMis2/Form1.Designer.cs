@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.headerpanel = new System.Windows.Forms.Panel();
+            this.lblRole = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menupanel = new System.Windows.Forms.Panel();
             this.reportbtn = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.requestbtn = new Bunifu.Framework.UI.BunifuTileButton();
             this.r = new Bunifu.Framework.UI.BunifuTileButton();
             this.p = new Bunifu.Framework.UI.BunifuTileButton();
@@ -64,8 +64,9 @@
             // headerpanel
             // 
             this.headerpanel.BackColor = System.Drawing.Color.White;
+            this.headerpanel.Controls.Add(this.lblRole);
             this.headerpanel.Controls.Add(this.panel2);
-            this.headerpanel.Controls.Add(this.label3);
+            this.headerpanel.Controls.Add(this.lblWelcome);
             this.headerpanel.Controls.Add(this.label2);
             this.headerpanel.Controls.Add(this.label1);
             this.headerpanel.Controls.Add(this.menupanel);
@@ -77,17 +78,23 @@
             this.headerpanel.Name = "headerpanel";
             this.headerpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.headerpanel_Paint);
             // 
+            // lblRole
+            // 
+            resources.ApplyResources(this.lblRole, "lblRole");
+            this.lblRole.ForeColor = System.Drawing.Color.DimGray;
+            this.lblRole.Name = "lblRole";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(68)))), ((int)(((byte)(200)))));
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
-            // label3
+            // lblWelcome
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.lblWelcome, "lblWelcome");
+            this.lblWelcome.ForeColor = System.Drawing.Color.DimGray;
+            this.lblWelcome.Name = "lblWelcome";
             // 
             // label2
             // 
@@ -103,9 +110,8 @@
             // 
             // menupanel
             // 
-            this.menupanel.BackColor = System.Drawing.Color.Snow;
+            this.menupanel.BackColor = System.Drawing.Color.Transparent;
             this.menupanel.Controls.Add(this.reportbtn);
-            this.menupanel.Controls.Add(this.bunifuTileButton2);
             this.menupanel.Controls.Add(this.requestbtn);
             this.menupanel.Controls.Add(this.r);
             this.menupanel.Controls.Add(this.p);
@@ -116,9 +122,9 @@
             // 
             // reportbtn
             // 
-            this.reportbtn.BackColor = System.Drawing.Color.White;
-            this.reportbtn.color = System.Drawing.Color.White;
-            this.reportbtn.colorActive = System.Drawing.Color.Gainsboro;
+            this.reportbtn.BackColor = System.Drawing.Color.Transparent;
+            this.reportbtn.color = System.Drawing.Color.Transparent;
+            this.reportbtn.colorActive = System.Drawing.Color.Transparent;
             this.reportbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.reportbtn, "reportbtn");
             this.reportbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(68)))), ((int)(((byte)(200)))));
@@ -128,22 +134,7 @@
             this.reportbtn.LabelPosition = 29;
             this.reportbtn.LabelText = "Report";
             this.reportbtn.Name = "reportbtn";
-            // 
-            // bunifuTileButton2
-            // 
-            this.bunifuTileButton2.BackColor = System.Drawing.Color.White;
-            this.bunifuTileButton2.color = System.Drawing.Color.White;
-            this.bunifuTileButton2.colorActive = System.Drawing.Color.Gainsboro;
-            this.bunifuTileButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.bunifuTileButton2, "bunifuTileButton2");
-            this.bunifuTileButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(68)))), ((int)(((byte)(200)))));
-            this.bunifuTileButton2.Image = global::BrgyMis2.Properties.Resources.icons8_Event_32px;
-            this.bunifuTileButton2.ImagePosition = 14;
-            this.bunifuTileButton2.ImageZoom = 40;
-            this.bunifuTileButton2.LabelPosition = 29;
-            this.bunifuTileButton2.LabelText = "Events";
-            this.bunifuTileButton2.Name = "bunifuTileButton2";
-            this.bunifuTileButton2.Click += new System.EventHandler(this.bunifuTileButton2_Click);
+            this.reportbtn.Click += new System.EventHandler(this.reportbtn_Click);
             // 
             // requestbtn
             // 
@@ -205,7 +196,7 @@
             this.applicationbtn.ImagePosition = 14;
             this.applicationbtn.ImageZoom = 40;
             this.applicationbtn.LabelPosition = 29;
-            this.applicationbtn.LabelText = "Application";
+            this.applicationbtn.LabelText = "User Management";
             this.applicationbtn.Name = "applicationbtn";
             this.applicationbtn.Click += new System.EventHandler(this.o_Click);
             // 
@@ -327,7 +318,7 @@
         private Bunifu.Framework.UI.BunifuTileButton p;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
@@ -335,7 +326,7 @@
         private System.Windows.Forms.Panel mainpanel;
         private dashboardUserControl dashboardUserControl1;
         public System.Windows.Forms.Panel headerpanel;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton2;
+        private System.Windows.Forms.Label lblRole;
     }
 }
 
