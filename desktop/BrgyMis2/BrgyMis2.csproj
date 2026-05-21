@@ -127,6 +127,12 @@
     <Compile Include="GenerateDocumentForm.Designer.cs">
       <DependentUpon>GenerateDocumentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenerateIndigency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateIndigency.Designer.cs">
+      <DependentUpon>GenerateIndigency.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GenerateDocumentForm.resx">
       <DependentUpon>GenerateDocumentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateIndigency.resx">
+      <DependentUpon>GenerateIndigency.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
