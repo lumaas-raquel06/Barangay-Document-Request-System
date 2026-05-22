@@ -130,4 +130,36 @@ class RequestController extends Controller
             'data' => $request
         ]);
     }
+
+    public function dashboardCounts()
+    {
+        $totalResidents = DB::table('tbl_residentinfo')->count();
+
+        $totalRequests = DB::table('request')->count();
+
+        $pendingRequests = DB::table('request')
+            ->where('Status', 'Pending for Approval')
+            ->count();
+
+        $approvedRequests = DB::table('request')
+            ->where('Status', 'Approved')
+            ->count();
+
+        $completedRequests = DB::table('request')
+            ->where('Status', 'Completed')
+            ->count();
+
+        $rejectedRequests = DB::table('request')
+            ->where('Status', 'Rejected')
+            ->count();
+
+        return response()->json([
+            'totalResidents' => $totalResidents,
+            'totalRequests' => $totalRequests,
+            'pendingRequests' => $pendingRequests,
+            'approvedRequests' => $approvedRequests,
+            'completedRequests' => $completedRequests,
+            'rejectedRequests' => $rejectedRequests,
+        ]);
+    }
 }
