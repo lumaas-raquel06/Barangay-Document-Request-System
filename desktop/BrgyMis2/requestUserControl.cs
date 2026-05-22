@@ -17,6 +17,7 @@ namespace BrgyMis2
         private static requestUserControl _instance;
         private readonly string baseApiUrl = "http://127.0.0.1:8000/api/";
         private Timer refreshTimer = new Timer();
+        private bool isLoading = false;
 
         public static requestUserControl Instance
         {
@@ -28,12 +29,13 @@ namespace BrgyMis2
                 return _instance;
             }
         }
+
         public requestUserControl()
         {
             InitializeComponent();
             SetupDataGridViews();
 
-            refreshTimer.Interval = 1000; //refresh every 5 seconds
+            refreshTimer.Interval = 2000;
             refreshTimer.Tick += refreshTimer_Tick;
             refreshTimer.Start();
 
@@ -59,21 +61,45 @@ namespace BrgyMis2
             try
             {
                 string requestId = dgv.Rows[e.RowIndex].Cells[0].Value.ToString();
+                string documentType = dgv.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string actionText = dgv.Rows[e.RowIndex].Cells[5].Value.ToString();
 
                 refreshTimer.Stop();
 
-                using (RequestDetailsForm detailsForm = new RequestDetailsForm(requestId))
+                if (actionText == "View")
                 {
-                    detailsForm.ShowDialog();
+                    using (RequestDetailsForm detailsForm = new RequestDetailsForm(requestId))
+                    {
+                        if (detailsForm.ShowDialog() == DialogResult.OK)
+                        {
+                            RefreshAllRequestTabs();
+                        }
+                    }
                 }
+                else if (actionText == "Generate / Done")
+                {
+                    DialogResult choice = MessageBox.Show(
+                        "Choose YES to generate the document.\nChoose NO to mark this request as completed.",
+                        "Approved Request Action",
+                        MessageBoxButtons.YesNoCancel,
+                        MessageBoxIcon.Question
+                    );
 
-                LoadCurrentTabData();
+                    if (choice == DialogResult.Yes)
+                    {
+                        OpenGenerateDocumentForm(requestId, documentType);
+                    }
+                    else if (choice == DialogResult.No)
+                    {
+                        MarkRequestAsCompleted(requestId);
+                    }
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Unable to open request details.\n\nDetails: " + ex.Message,
-                    "Request Details Error",
+                    "Unable to process request action.\n\nDetails: " + ex.Message,
+                    "Request Action Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
@@ -81,6 +107,93 @@ namespace BrgyMis2
             finally
             {
                 refreshTimer.Start();
+            }
+        }
+
+        private async void MarkRequestAsCompleted(string requestId)
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    var data = new
+                    {
+                        Status = "Completed"
+                    };
+
+                    var content = new StringContent(
+                        JsonConvert.SerializeObject(data),
+                        Encoding.UTF8,
+                        "application/json"
+                    );
+
+                    var request = new HttpRequestMessage(
+                        new HttpMethod("PATCH"),
+                        baseApiUrl + "requests/" + requestId + "/status"
+                    );
+
+                    request.Content = content;
+
+                    var response = await client.SendAsync(request);
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show(
+                            "Request marked as completed successfully.",
+                            "Completed",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
+
+                        RefreshAllRequestTabs();
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "Unable to mark request as completed.\n\n" + responseBody,
+                            "Update Failed",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error marking request as completed:\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+        }
+
+        private void OpenGenerateDocumentForm(string requestId, string documentType)
+        {
+            if (documentType == "Barangay Clearance")
+            {
+                using (GenerateDocumentForm form = new GenerateDocumentForm(requestId))
+                {
+                    form.ShowDialog();
+                }
+            }
+            else if (documentType == "Certificate of Indigency")
+            {
+                using (GenerateIndigency form = new GenerateIndigency(requestId))
+                {
+                    form.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Document generation is only available for Barangay Clearance and Certificate of Indigency.",
+                    "Unavailable Document Type",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
             }
         }
 
@@ -96,7 +209,7 @@ namespace BrgyMis2
 
             switch (tabControl1.SelectedTab.Text)
             {
-                case "Request":
+                case "Pending":
                     currentStatus = "Pending for Approval";
                     targetDgv = dgvPending;
                     break;
@@ -107,7 +220,7 @@ namespace BrgyMis2
                     break;
 
                 case "Disapproved":
-                    currentStatus = "Disapproved";
+                    currentStatus = "Rejected";
                     targetDgv = dgvDisapproved;
                     break;
 
@@ -122,6 +235,7 @@ namespace BrgyMis2
                 loaddata(currentStatus, targetDgv, dudYear.Text, searchtxt.Text);
             }
         }
+
         private void SetupDataGridViews()
         {
             dgvPending.AutoGenerateColumns = false;
@@ -137,6 +251,11 @@ namespace BrgyMis2
 
         public async void loaddata(string status, DataGridView dgv, string year, string search = "")
         {
+            if (isLoading)
+                return;
+
+            isLoading = true;
+
             try
             {
                 using (HttpClient client = new HttpClient())
@@ -148,20 +267,6 @@ namespace BrgyMis2
                         "&search=" + Uri.EscapeDataString(search.Trim());
 
                     string responseBody = await client.GetStringAsync(url);
-
-                    if (string.IsNullOrWhiteSpace(responseBody))
-                    {
-                        dgv.Rows.Clear();
-
-                        MessageBox.Show(
-                            "The API returned an empty response.",
-                            "No Response",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning
-                        );
-
-                        return;
-                    }
 
                     ApiResponse apiResponse =
                         JsonConvert.DeserializeObject<ApiResponse>(responseBody);
@@ -176,24 +281,23 @@ namespace BrgyMis2
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
                         );
-
                         return;
                     }
 
                     if (apiResponse.data == null || apiResponse.data.Count == 0)
-                    {
                         return;
-                    }
 
                     foreach (var item in apiResponse.data)
                     {
+                        string actionText = status == "Approved" ? "Generate / Done" : "View";
+
                         dgv.Rows.Add(
                             item.id,
                             item.Fullname,
                             item.Documents,
                             item.Purposes,
                             item.DateofRequest,
-                            "View"
+                            actionText
                         );
                     }
                 }
@@ -209,6 +313,18 @@ namespace BrgyMis2
                     MessageBoxIcon.Error
                 );
             }
+            finally
+            {
+                isLoading = false;
+            }
+        }
+
+        private void RefreshAllRequestTabs()
+        {
+            loaddata("Pending for Approval", dgvPending, dudYear.Text, searchtxt.Text);
+            loaddata("Approved", dgvApproved, dudYear.Text, searchtxt.Text);
+            loaddata("Rejected", dgvDisapproved, dudYear.Text, searchtxt.Text);
+            loaddata("Completed", dgvCompleted, dudYear.Text, searchtxt.Text);
         }
 
         public class ApiResponse
@@ -243,36 +359,7 @@ namespace BrgyMis2
 
         private void searchtxt_OnValueChanged(object sender, EventArgs e)
         {
-            string currentStatus = "";
-            DataGridView targetDgv = null;  
-
-            switch (tabControl1.SelectedTab.Text)
-            {
-                case "Request":
-                    currentStatus = "Pending for Approval";
-                    targetDgv = dgvPending;
-                    break;
-
-                case "Approved":
-                    currentStatus = "Approved";
-                    targetDgv = dgvApproved;
-                    break;
-
-                case "Disapproved":
-                    currentStatus = "Disapproved";
-                    targetDgv = dgvDisapproved;
-                    break;
-
-                case "Completed":
-                    currentStatus = "Completed";
-                    targetDgv = dgvCompleted;
-                    break;
-            }
-
-            if (targetDgv != null)
-            {
-                loaddata(currentStatus, targetDgv, dudYear.Text, searchtxt.Text);
-            }
+            LoadCurrentTabData();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -287,12 +374,13 @@ namespace BrgyMis2
                 dudYear.Text = DateTime.Now.Year.ToString();
             }
 
-            loaddata("Pending for Approval", dgvPending, dudYear.Text);
+            RefreshAllRequestTabs();
         }
 
         private void dudYear_SelectedItemChanged(object sender, EventArgs e)
         {
-            searchtxt_OnValueChanged(sender, e);
+            RefreshAllRequestTabs();
+
         }
     }
 }

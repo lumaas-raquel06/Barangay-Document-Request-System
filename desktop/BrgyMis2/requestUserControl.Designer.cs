@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(requestUserControl));
             this.label2 = new System.Windows.Forms.Label();
             this.searchtxt = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvPending = new System.Windows.Forms.DataGridView();
@@ -67,7 +66,7 @@
             this.dudYear = new System.Windows.Forms.DomainUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPending)).BeginInit();
@@ -77,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisapproved)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompleted)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -118,19 +118,6 @@
             this.searchtxt.OnValueChanged += new System.EventHandler(this.searchtxt_OnValueChanged);
             this.searchtxt.Load += new System.EventHandler(this.requestUserControl_Load);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = global::BrgyMis2.Properties.Resources.icons8_Search_32px;
-            this.pictureBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox3.Location = new System.Drawing.Point(1259, 110);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 31);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 28;
-            this.pictureBox3.TabStop = false;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -153,7 +140,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1265, 434);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Request";
+            this.tabPage1.Text = "Pending";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // dgvPending
@@ -224,7 +211,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 41);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1265, 513);
+            this.tabPage2.Size = new System.Drawing.Size(1265, 434);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Approved";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -249,7 +236,7 @@
             this.dgvApproved.RowHeadersVisible = false;
             this.dgvApproved.RowHeadersWidth = 51;
             this.dgvApproved.RowTemplate.Height = 24;
-            this.dgvApproved.Size = new System.Drawing.Size(1259, 507);
+            this.dgvApproved.Size = new System.Drawing.Size(1259, 428);
             this.dgvApproved.TabIndex = 0;
             // 
             // app_id
@@ -293,7 +280,7 @@
             this.tabPage3.Controls.Add(this.dgvDisapproved);
             this.tabPage3.Location = new System.Drawing.Point(4, 41);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1265, 513);
+            this.tabPage3.Size = new System.Drawing.Size(1265, 434);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Disapproved";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -318,7 +305,7 @@
             this.dgvDisapproved.RowHeadersVisible = false;
             this.dgvDisapproved.RowHeadersWidth = 51;
             this.dgvDisapproved.RowTemplate.Height = 24;
-            this.dgvDisapproved.Size = new System.Drawing.Size(1265, 513);
+            this.dgvDisapproved.Size = new System.Drawing.Size(1265, 434);
             this.dgvDisapproved.TabIndex = 0;
             // 
             // dis_id
@@ -362,7 +349,7 @@
             this.tabPage4.Controls.Add(this.dgvCompleted);
             this.tabPage4.Location = new System.Drawing.Point(4, 41);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1265, 513);
+            this.tabPage4.Size = new System.Drawing.Size(1265, 434);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Completed";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -386,7 +373,7 @@
             this.dgvCompleted.RowHeadersVisible = false;
             this.dgvCompleted.RowHeadersWidth = 51;
             this.dgvCompleted.RowTemplate.Height = 24;
-            this.dgvCompleted.Size = new System.Drawing.Size(1265, 513);
+            this.dgvCompleted.Size = new System.Drawing.Size(1265, 434);
             this.dgvCompleted.TabIndex = 0;
             // 
             // com_id
@@ -457,6 +444,19 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = global::BrgyMis2.Properties.Resources.icons8_Search_32px;
+            this.pictureBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox3.Location = new System.Drawing.Point(1259, 110);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(33, 31);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 28;
+            this.pictureBox3.TabStop = false;
+            // 
             // requestUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -473,7 +473,6 @@
             this.Name = "requestUserControl";
             this.Size = new System.Drawing.Size(1347, 738);
             this.Load += new System.EventHandler(this.requestUserControl_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPending)).EndInit();
@@ -483,6 +482,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisapproved)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompleted)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

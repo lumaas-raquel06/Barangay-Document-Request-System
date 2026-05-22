@@ -119,7 +119,8 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lblRequestId = new System.Windows.Forms.Label();
             this.panelControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelPreview.SuspendLayout();
@@ -475,6 +476,7 @@
             this.dtpDateIssued.Name = "dtpDateIssued";
             this.dtpDateIssued.Size = new System.Drawing.Size(200, 22);
             this.dtpDateIssued.TabIndex = 15;
+            this.dtpDateIssued.ValueChanged += new System.EventHandler(this.dtpDateIssued_ValueChanged);
             // 
             // txtEmail
             // 
@@ -1077,23 +1079,37 @@
             this.pictureBox2.TabIndex = 42;
             this.pictureBox2.TabStop = false;
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1044, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 33);
-            this.button1.TabIndex = 21;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1044, 50);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(45, 33);
+            this.btnClose.TabIndex = 21;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // lblRequestId
+            // 
+            this.lblRequestId.AutoSize = true;
+            this.lblRequestId.BackColor = System.Drawing.Color.LavenderBlush;
+            this.lblRequestId.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRequestId.ForeColor = System.Drawing.Color.Purple;
+            this.lblRequestId.Location = new System.Drawing.Point(829, 50);
+            this.lblRequestId.Name = "lblRequestId";
+            this.lblRequestId.Size = new System.Drawing.Size(127, 23);
+            this.lblRequestId.TabIndex = 50;
+            this.lblRequestId.Text = "Request ID: 15\n";
             // 
             // GenerateIndigency
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 733);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblRequestId);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panelPreview);
             this.Controls.Add(this.panelControls);
             this.Controls.Add(this.lblSubtitle);
@@ -1102,6 +1118,7 @@
             this.Controls.Add(this.btnPrint);
             this.Name = "GenerateIndigency";
             this.Text = "GenerateIndigency";
+            this.Load += new System.EventHandler(this.GenerateIndigency_Load);
             this.panelControls.ResumeLayout(false);
             this.panelControls.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1207,6 +1224,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblRequestId;
     }
 }

@@ -16,12 +16,15 @@ namespace BrgyMis2
     public partial class RequestDetailsForm : Form
     {
         private string requestId;
+        private string selectedRequestId;
         private readonly string baseApiUrl = "http://127.0.0.1:8000/api/";
+        public bool StatusChanged { get; private set; } = false;
 
         public RequestDetailsForm(string id)
         {
             InitializeComponent();
             requestId = id;
+            selectedRequestId = requestId;
         }
 
         private void panelMain_Paint(object sender, PaintEventArgs e)
@@ -105,9 +108,102 @@ namespace BrgyMis2
             }
         }
 
+        private async Task<bool> UpdateRequestStatus(
+    string status)
+        {
+            try
+            {
+                using (HttpClient client =
+                    new HttpClient())
+                {
+                    var data = new
+                    {
+                        Status = status
+                    };
+
+                    var content =
+                        new StringContent(
+                            JsonConvert.SerializeObject(
+                                data),
+                            Encoding.UTF8,
+                            "application/json"
+                        );
+
+                    HttpRequestMessage request =
+                        new HttpRequestMessage(
+                            new HttpMethod("PATCH"),
+                            baseApiUrl +
+                            "requests/" +
+                            requestId +
+                            "/status"
+                        );
+
+                    request.Content =
+                        content;
+
+                    var response =
+                        await client.SendAsync(
+                            request);
+
+                    return
+                        response.IsSuccessStatusCode;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message);
+
+                return false;
+            }
+        }
         private async void RequestDetailsForm_Load(object sender, EventArgs e)
         {
             await LoadRequestDetails();
+        }
+
+        private async void btnAccept_Click(object sender, EventArgs e)
+        {
+            bool updated =
+        await UpdateRequestStatus(
+            "Approved");
+
+            if (updated)
+            {
+                StatusChanged = true;
+
+                MessageBox.Show(
+                    "Request approved successfully.");
+
+                this.DialogResult =
+                    DialogResult.OK;
+
+                this.Close();
+            }
+        }
+
+        private async void btnDecline_Click(object sender, EventArgs e)
+        {
+            bool updated = await UpdateRequestStatus("Rejected");
+
+            if (updated)
+            {
+                StatusChanged =
+                    true;
+
+                MessageBox.Show(
+                    "Request declined.");
+
+                this.DialogResult =
+                    DialogResult.OK;
+
+                this.Close();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

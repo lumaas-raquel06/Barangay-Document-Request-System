@@ -10,12 +10,14 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.IO;
-
+using System.Drawing.Printing;
 
 namespace BrgyMis2
 {
     public partial class GenerateDocumentForm : Form
     {
+        private Bitmap certificateImage;
+        private PrintDocument printDocument = new PrintDocument();
         private string requestId;
         private readonly string baseApiUrl = "http://127.0.0.1:8000/api/";
 
@@ -23,7 +25,25 @@ namespace BrgyMis2
         {
             InitializeComponent();
             requestId = selectedRequestId;
+            printDocument.PrintPage += printDocument_PrintPage;
         }
+
+        private void CaptureCertificate()
+        {
+            certificateImage =
+                new Bitmap(
+                    panelCertificate.Width * 3,
+                    panelCertificate.Height * 3);
+
+            panelCertificate.DrawToBitmap(
+                certificateImage,
+                new Rectangle(
+                    0,
+                    0,
+                    certificateImage.Width,
+                    certificateImage.Height));
+        }
+
 
         private async void GenerateDocumentForm_Load(object sender, EventArgs e)
         {
@@ -111,6 +131,96 @@ namespace BrgyMis2
         private void dtpDateIssued_ValueChanged(object sender, EventArgs e)
         {
             lblCertDateIssued.Text = dtpDateIssued.Value.ToString("MMMM dd, yyyy");
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CaptureCertificate();
+
+                PrintPreviewDialog previewDialog = new PrintPreviewDialog();
+                previewDialog.Document = printDocument;
+                previewDialog.WindowState = FormWindowState.Maximized;
+                previewDialog.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Print error: " + ex.Message);
+            }
+        }
+
+        private void printDocument_PrintPage(
+    object sender,
+    PrintPageEventArgs e)
+        {
+            e.PageSettings.PaperSize =
+                new PaperSize(
+                    "A4",
+                    827,
+                    1169);
+
+            e.PageSettings.Landscape = false;
+
+            int margin = 40;
+
+            Rectangle printableArea =
+                new Rectangle(
+                    margin,
+                    margin,
+                    e.PageBounds.Width - (margin * 2),
+                    e.PageBounds.Height - (margin * 2));
+
+            e.Graphics.InterpolationMode =
+                System.Drawing.Drawing2D
+                .InterpolationMode.HighQualityBicubic;
+
+            e.Graphics.SmoothingMode =
+                System.Drawing.Drawing2D
+                .SmoothingMode.HighQuality;
+
+            e.Graphics.PixelOffsetMode =
+                System.Drawing.Drawing2D
+                .PixelOffsetMode.HighQuality;
+
+            e.Graphics.CompositingQuality =
+                System.Drawing.Drawing2D
+                .CompositingQuality.HighQuality;
+
+            float ratioX =
+                (float)printableArea.Width /
+                certificateImage.Width;
+
+            float ratioY =
+                (float)printableArea.Height /
+                certificateImage.Height;
+
+            float ratio =
+                Math.Min(ratioX, ratioY);
+
+            int width =
+                (int)(certificateImage.Width * ratio);
+
+            int height =
+                (int)(certificateImage.Height * ratio);
+
+            int x =
+                (e.PageBounds.Width - width) / 2;
+
+            int y =
+                (e.PageBounds.Height - height) / 2;
+
+            e.Graphics.DrawImage(
+                certificateImage,
+                x,
+                y,
+                width,
+                height);
         }
     }
 }
