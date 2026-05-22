@@ -111,28 +111,6 @@ namespace BrgyMis2
 
         }
 
-        private void bunifuTileButton2_Click(object sender, EventArgs e)
-        {
-            mainpanel.Controls.Clear();
-            mainpanel.Controls.Add(eventUserControl.Instance);
-            f.centerUserpanel(eventUserControl.Instance);
-           
-        }
-
-        private void o_Click(object sender, EventArgs e)
-        {
-            mainpanel.Controls.Clear();
-            mainpanel.Controls.Add(applicationUserControl.Instance);
-            f.centerUserpanel(applicationUserControl.Instance);
-        }
-
-        private void r_Click(object sender, EventArgs e)
-        {
-            mainpanel.Controls.Clear();
-            mainpanel.Controls.Add(officialsUserControl.Instance);
-            f.centerUserpanel(officialsUserControl.Instance);
-        }
-
         private void requestbtn_Click(object sender, EventArgs e)
         {
             // 1. Limpyohan ang mainpanel aron matangtang ang karaan nga UserControl
@@ -147,7 +125,9 @@ namespace BrgyMis2
 
         private void reportbtn_Click(object sender, EventArgs e)
         {
-
+            mainpanel.Controls.Clear();
+            mainpanel.Controls.Add(Report.Instance);
+            f.centerUserpanel(Report.Instance);
         }
     }
 }

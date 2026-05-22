@@ -36,29 +36,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menupanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.mainpanel = new System.Windows.Forms.Panel();
             this.reportbtn = new Bunifu.Framework.UI.BunifuTileButton();
             this.requestbtn = new Bunifu.Framework.UI.BunifuTileButton();
-            this.r = new Bunifu.Framework.UI.BunifuTileButton();
             this.p = new Bunifu.Framework.UI.BunifuTileButton();
-            this.applicationbtn = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
             this.expandbtn = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.mainpanel = new System.Windows.Forms.Panel();
             this.dashboardUserControl1 = new BrgyMis2.dashboardUserControl();
             this.headerpanel.SuspendLayout();
             this.menupanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.mainpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.expandbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.mainpanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // headerpanel
@@ -113,12 +111,38 @@
             this.menupanel.BackColor = System.Drawing.Color.Transparent;
             this.menupanel.Controls.Add(this.reportbtn);
             this.menupanel.Controls.Add(this.requestbtn);
-            this.menupanel.Controls.Add(this.r);
             this.menupanel.Controls.Add(this.p);
-            this.menupanel.Controls.Add(this.applicationbtn);
             this.menupanel.Controls.Add(this.bunifuTileButton1);
             resources.ApplyResources(this.menupanel, "menupanel");
             this.menupanel.Name = "menupanel";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.panel3);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.MediumOrchid;
+            this.label4.Name = "label4";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(68)))), ((int)(((byte)(200)))));
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.Name = "panel3";
+            // 
+            // mainpanel
+            // 
+            resources.ApplyResources(this.mainpanel, "mainpanel");
+            this.mainpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(210)))), ((int)(((byte)(236)))));
+            this.mainpanel.Controls.Add(this.dashboardUserControl1);
+            this.mainpanel.Name = "mainpanel";
+            this.mainpanel.Click += new System.EventHandler(this.mainpanel_Click);
             // 
             // reportbtn
             // 
@@ -152,22 +176,6 @@
             this.requestbtn.Name = "requestbtn";
             this.requestbtn.Click += new System.EventHandler(this.requestbtn_Click);
             // 
-            // r
-            // 
-            this.r.BackColor = System.Drawing.Color.White;
-            this.r.color = System.Drawing.Color.White;
-            this.r.colorActive = System.Drawing.Color.Gainsboro;
-            this.r.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.r, "r");
-            this.r.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(68)))), ((int)(((byte)(200)))));
-            this.r.Image = global::BrgyMis2.Properties.Resources.icons8_City_Hall_32px;
-            this.r.ImagePosition = 14;
-            this.r.ImageZoom = 40;
-            this.r.LabelPosition = 29;
-            this.r.LabelText = "Officials";
-            this.r.Name = "r";
-            this.r.Click += new System.EventHandler(this.r_Click);
-            // 
             // p
             // 
             this.p.BackColor = System.Drawing.Color.White;
@@ -183,22 +191,6 @@
             this.p.LabelText = "Residents";
             this.p.Name = "p";
             this.p.Click += new System.EventHandler(this.p_Click);
-            // 
-            // applicationbtn
-            // 
-            this.applicationbtn.BackColor = System.Drawing.Color.White;
-            this.applicationbtn.color = System.Drawing.Color.White;
-            this.applicationbtn.colorActive = System.Drawing.Color.Gainsboro;
-            this.applicationbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.applicationbtn, "applicationbtn");
-            this.applicationbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(68)))), ((int)(((byte)(200)))));
-            this.applicationbtn.Image = global::BrgyMis2.Properties.Resources.icons8_Certificate_32px;
-            this.applicationbtn.ImagePosition = 14;
-            this.applicationbtn.ImageZoom = 40;
-            this.applicationbtn.LabelPosition = 29;
-            this.applicationbtn.LabelText = "User Management";
-            this.applicationbtn.Name = "applicationbtn";
-            this.applicationbtn.Click += new System.EventHandler(this.o_Click);
             // 
             // bunifuTileButton1
             // 
@@ -246,34 +238,6 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.panel3);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.Color.MediumOrchid;
-            this.label4.Name = "label4";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(68)))), ((int)(((byte)(200)))));
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Name = "panel3";
-            // 
-            // mainpanel
-            // 
-            resources.ApplyResources(this.mainpanel, "mainpanel");
-            this.mainpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(210)))), ((int)(((byte)(236)))));
-            this.mainpanel.Controls.Add(this.dashboardUserControl1);
-            this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Click += new System.EventHandler(this.mainpanel_Click);
-            // 
             // dashboardUserControl1
             // 
             this.dashboardUserControl1.BackColor = System.Drawing.Color.White;
@@ -293,12 +257,12 @@
             this.headerpanel.ResumeLayout(false);
             this.headerpanel.PerformLayout();
             this.menupanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.mainpanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.expandbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.mainpanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -312,8 +276,6 @@
         private System.Windows.Forms.Panel menupanel;
         private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton1;
         private Bunifu.Framework.UI.BunifuTileButton reportbtn;
-        private Bunifu.Framework.UI.BunifuTileButton r;
-        private Bunifu.Framework.UI.BunifuTileButton applicationbtn;
         private Bunifu.Framework.UI.BunifuTileButton requestbtn;
         private Bunifu.Framework.UI.BunifuTileButton p;
         private System.Windows.Forms.Label label2;
